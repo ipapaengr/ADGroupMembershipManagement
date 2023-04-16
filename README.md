@@ -1,14 +1,9 @@
-## Script Description
+## PowerShell Script Description
 
-This script is designed to add users to Active Directory (AD) groups based on a CSV file with a unique format. The CSV file must have two columns with the following column names: "AD Group" and "Samaccountname".
+This PowerShell script imports user data from a CSV file located at "C:\data\AddUsers.csv", and adds them to an Active Directory (AD) group using the `Add-ADGroupMember` cmdlet. The script also handles errors by catching exceptions and storing the error message in the `$result` variable. 
 
-The "AD Group" column lists the AD groups that the user should be added to in a semicolon-separated format. For example, if the user should be added to three AD groups, the "AD Group" column for that row would look like this: "adgroup1;adgroup2;adgroup3".
+The script then selects the 'AD Group', 'SamAccountName', and 'Result' properties using the `Select-Object` cmdlet, and exports the result to a new CSV file located at "C:\Data\AddUsers_Results.csv" using the `Export-Csv` cmdlet.
 
-The "Samaccountname" column lists the username (SamAccountName) of the user that should be added to the AD groups listed in the "AD Group" column.
+The CSV file being imported should have a column named 'AD Group' containing the name of the AD group to which the user should be added, and a column named 'SamAccountName' containing the username of the user to be added to the AD group.
 
-Here's a sample format for the CSV file:
-
-AD Group,Samaccountname
-adgroup1;adgroup2;adgroup3,Samaccount1
-adgroup4;adgroup5;adgroup6,Samaccount2
-adgroup11;adgroup22;adgroup33,Samaccount3
+To run the script, copy and paste the code into a PowerShell editor or run it in a PowerShell console.
