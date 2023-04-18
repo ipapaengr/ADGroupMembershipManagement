@@ -1,5 +1,5 @@
 PowerShell Script Description
-This PowerShell script is designed to add users to Active Directory groups based on the information provided in a CSV file. The CSV file should have two columns with the following headers: "AD Group" and "Samaccountname". <u>Multiple AD groups can be separated by semicolons in the CSV file if multiple groups need to be added for the same user.</u>
+This PowerShell script is designed to add users to Active Directory groups based on the information provided in a CSV file. The CSV file should have two columns with the following headers: "AD Group" and "Samaccountname". <u>Multiple AD groups can be separated by semicolons in the CSV file if multiple groups need to be added for the same user.</u> Not the usual format but was needed to accomodate and applicaton request.
 
 Here is an example CSV file format:
 | AD Group               | Samaccountname |
